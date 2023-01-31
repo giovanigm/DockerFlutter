@@ -19,7 +19,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: leobastiani/flutter
+          repository: giovanigm/flutter
           readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}
       - name: Docker Hub Description
@@ -27,6 +27,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: leobastiani/flutter-cache
+          repository: giovanigm/flutter-cache
           readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}

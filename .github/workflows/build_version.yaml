@@ -26,17 +26,17 @@ jobs:
       - name: Build and push image
         run: |
           docker build \
-            -t leobastiani/flutter:${{ inputs.branch_name }} \
+            -t giovanigm/flutter:${{ inputs.branch_name }} \
             --build-arg=flutterVersion=${{ inputs.branch_name }} \
-            --cache-from=type=registry,ref=leobastiani/flutter-cache:${{ inputs.branch_name }} \
-            --cache-to=type=registry,ref=leobastiani/flutter-cache:${{ inputs.branch_name }},mode=max \
+            --cache-from=type=registry,ref=giovanigm/flutter-cache:${{ inputs.branch_name }} \
+            --cache-to=type=registry,ref=giovanigm/flutter-cache:${{ inputs.branch_name }},mode=max \
             --push \
             --platform linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x \
             .
       - name: Build and push sudo image
         run: |
           docker build \
-            -t leobastiani/flutter-sudo:${{ inputs.branch_name }} \
+            -t giovanigm/flutter-sudo:${{ inputs.branch_name }} \
             --build-arg=flutterVersion=${{ inputs.branch_name }} \
             --push \
             --platform linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x \
